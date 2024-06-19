@@ -1,6 +1,9 @@
 
 import requests
 from bs4 import BeautifulSoup
+import json
+import datetime
+
 
 def get_weather():
     url = "http://www.kma.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108"
@@ -17,3 +20,9 @@ def get_weather():
         output += f"최저/최고 기온 : {loc.select_one('tmn').string}/{loc.select_one('tmx').string}<hr>"
 
     return output
+
+def get_weather_house():
+    API_KEY = 'WheJyyqo3FCeVxffSHIZaNl0WjWHm6OhSYvI8gfisQ8ObqBocgqjemN%2BboAwgbf2wwgw5pFuCrVPf2Nmkce5OA%3D%3D'
+    API_KEY_decode = requests.utils.unquote(API_KEY)
+    print(API_KEY_decode)
+    return API_KEY_decode
