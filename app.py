@@ -50,7 +50,7 @@ def post_register():
 # add_url_rule 사용하여 라우트 추가
 app.add_url_rule('/api/data', 'get_data_route', get_data, methods=['GET'])
 app.add_url_rule('/api/weather', 'get_weather_route', get_weather, methods=['GET'])
-app.add_url_rule('/api/weather-house', 'get_weather_house', get_weather_house, methods=['GET'])
+app.add_url_rule('/api/weather-house', 'get_weather_house_route', get_weather_house, methods=['GET'])
 
 if __name__ == '__main__':
     app.run()
